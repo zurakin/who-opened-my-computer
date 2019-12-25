@@ -1,13 +1,14 @@
-import smtplib
+import smtplib, os
 from email.message import EmailMessage
 import cv2 ,time
 import imghdr
 from datetime import datetime
 
-EMAIL_ADDRESS = 'happyzura10@gmail.com'
-EMAIL_PASSWORD = '********'
+EMAIL_ADDRESS = os.environ.get('EMAIL')
+EMAIL_PASSWORD = os.environ.get('PASSWORD')
 
-contacts = ['happyzura10@gmail.com']
+
+contacts = ['ilyassazirar@gmail.com']
 current_time = datetime.now()
 now = current_time.strftime('%D %H:%M')
 msg = EmailMessage()
